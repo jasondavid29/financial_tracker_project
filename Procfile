@@ -1,1 +1,1 @@
-web: gunicorn financial_tracker.wsgi
+web: gunicorn financial_tracker.wsgi:application
