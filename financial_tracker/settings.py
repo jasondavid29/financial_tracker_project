@@ -83,14 +83,10 @@ WSGI_APPLICATION = 'financial_tracker.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'financial_tracker_db',  # Your database name
-        'USER': 'root',          # Your MySQL user
-        'PASSWORD': 'jdmysql2903@',      # Your MySQL user password
-        'HOST': 'localhost',           # MySQL host (default is localhost)
-        'PORT': '3306',                # MySQL port (default is 3306)
-    }
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL'),
+        conn_max_age=600,
+    )
 }
 
 
