@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - Financial Tracker</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-container">
+      <a href="{% url 'index' %}" class="logo-link">
+        <h1 class="logo">💼 Financial Tracker</h1>
+      </a>
+      <nav class="nav-links">
+        <a href="{% url 'index' %}#contact" class="nav-btn">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="register-section">
+      <div class="register-card">
+        <h2>📝 Register Now</h2>
+
+        {% if messages %}
+          {% for message in messages %}
+            <p class="message">{{ message }}</p>
+          {% endfor %}
+        {% endif %}
+
+        <form method="POST" id="registerForm">
+          {% csrf_token %}
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="password">New Password:</label>
+          <input type="password" id="password" name="password" required>
+
+          <label for="confirm_password">Confirm Password:</label>
+          <input type="password" id="confirm_password" name="confirm_password" required>
+
+          <button type="submit" class="register-btn">Register</button>
+        </form>
+
+        <p class="login-text">Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Financial Tracker. All rights reserved.</p>
+  </footer>
+
+  <script src="{% static 'register.js' %}" defer></script>
+</body>
+</html>

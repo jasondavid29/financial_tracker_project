@@ -1,0 +1,973 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f9f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    background-color: #2e7d32;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 24px;
+}
+
+/* Navigation */
+.nav-links {
+    margin-right: 40px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color:  #00b386;
+    color: white;
+    padding: 10px 20px;
+    font-size: 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.dropbtn:hover {
+    background-color: #004d00;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+    border-radius: 6px;
+    z-index: 1;
+    left: 0;
+    top: 45px;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #eee;
+    box-sizing: border-box;
+}
+
+.dropdown-content a:hover {
+    background-color: #e8f5e9;
+    color: #1b5e20;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Main layout */
+.main-content {
+    padding: 30px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Form Section */
+.form-section,
+.transactions-section,
+.chart-section {
+    background: white;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-section h2,
+.transactions-section h2,
+.chart-section h2 {
+    color: #2e7d32;
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+form button {
+    background-color: #2e7d32;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+form button:hover {
+    background-color: #1b5e20;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th, table td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #e0f2f1;
+    color: #004d40;
+}
+
+/* Chart Section */
+.chart-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto 0;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #1c1c2b;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        margin: 10px 0;
+    }
+
+    .chart-container {
+        max-width: 100%;
+    }
+}
+
+.navbar {
+    background-color: #1c1c2b;
+    padding: 15px 30px;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: #00c896;
+    text-decoration: none;   /* Removes underline */
+    border-bottom: none;     /* Ensures no border */
+}
+.logo-link {
+  text-decoration: none;   /* Removes underline */
+  border-bottom: none;     /* Ensures no border */
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-btn {
+    color: #fff;
+    text-decoration: none;
+    background-color: #00c896;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #004d00;
+}
+
+.greeting-section {
+  background: linear-gradient(to right, #00c896, #007f6e);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-bottom: 30px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.greeting-section h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.greeting-section p {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 400;
+}
+
+
+/* index css */
+/* Hero / Landing Section */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.hero-content h2 {
+  font-size: 2.5rem; /* You can increase this to 3rem or more if needed */
+  font-weight: bold;
+  color: #1f2937; /* Optional: dark gray */
+  margin-bottom: 1rem;
+}
+
+
+.highlight {
+  color: #00b386;
+}
+
+.tagline {
+  font-size: 1.15rem;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+  font-size: 16px;
+  color: #444;
+}
+
+.features-list li {
+  margin: 10px 0;
+}
+
+.checkin-btn {
+  background-color: #00b386;
+  margin-top: 20px; /* Adjust value as needed */
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkin-btn:hover {
+  background-color: #009973;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.how-it-works-cards {
+   display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: nowrap; /* Force single row */
+  gap: 1rem;
+  overflow-x: auto; /* Optional: allows scrolling on smaller screens */
+  padding: 2rem 1rem;
+}
+
+.card {
+  width: 220px;
+  aspect-ratio: 1 / 1; /* Makes it perfectly square */
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 1.2rem;
+  font-size: 1.05rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:hover {
+  background-color: #d4f8d4; /* light green */
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.card-title {
+  color: #006400; /* Dark Green */
+  font-size: 1.2rem;     /* Reduced font size */
+  margin-bottom: 0.5rem;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: #ccc;  /* Light gray line */
+  margin: 3rem 0;          /* Space above and below */
+  width: 90%;              /* Line width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h2 {
+  font-size: 2.5rem; /* Increased from 2rem */
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.about-text p {
+  font-size: 1.15rem; /* Increased from 1rem */
+  line-height: 1.8;
+  color: #333333;
+}
+
+
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  text-align: right;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+
+
+/* Contact Section */
+.contact-section {
+  background-color: #064e3b; /* Dark green */
+  color: #ffffff; /* White text for contrast */
+  padding: 60px 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.contact-section h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: #ffffff; /* White color for the heading */
+}
+
+.subtext {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.submit-btn {
+  background-color: #00c896;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto 0 auto; /* top margin + auto left/right */
+}
+
+.submit-btn:hover {
+  background-color: #006759;
+}
+
+/* login css */
+.login-section {
+  background-color: #064e3b; /* Dark green */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.login-card {
+  background-color: white;
+  padding: 40px 35px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-card h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.login-card label {
+  display: block;
+  text-align: left;
+  margin-bottom: 8px;
+  margin-top: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.login-btn {
+  background-color: #00b386;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #009973;
+}
+
+.register-text {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.register-text a {
+  color: #00b386;
+  text-decoration: none;
+}
+
+.register-text a:hover {
+  text-decoration: underline;
+}
+
+.message {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+
+/* register css */
+.register-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh;
+  background-color: #064e3b; /* Dark green */
+}
+
+.register-card {
+  background-color: white;
+  padding: 1.5rem; /* Reduced padding */
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
+
+.register-card h2 {
+  font-size: 24px;
+  margin-bottom: 2px;
+  color: #1a1a1a;
+}
+
+.register-card label {
+  display: block;
+  text-align: left;
+  margin-bottom: 2px;
+  margin-top: 1px;
+  font-weight: 600;
+  color: #333;
+}
+
+.register-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.register-btn {
+  background-color: #00b386;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register-btn:hover {
+  background-color: #009973;
+}
+
+.login-text {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.login-text a {
+  color: #00b386;
+  text-decoration: none;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
+
+.message {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* dashboard css */
+.summary-section {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.totals-display {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.total-box,
+.savings-box {
+    background-color: #f4f4f4;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+}
+
+.income-box h3 {
+    color: #28a745;
+}
+
+.expense-box h3 {
+    color: #dc3545;
+}
+
+.savings-box h3 {
+    color: #6c757d; /* Neutral grey */
+}
+
+.total-box p,
+.savings-box p {
+    font-size: 1.0rem;
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+.modal {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    width: 280px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+}
+
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+.modal input,
+.modal select,
+.modal button {
+    width: 100%;
+    margin: 8px 0;
+    padding: 6px;
+}
+
+.dashboard-container {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+.export-buttons a {
+    margin-left: 10px;
+}
+
+.chart-section {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.chart-container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.chart-box {
+    flex: 1 1 48%;
+    background-color: white; /* changed from #1e1e2f */
+    color: #1e1e2f; /* changed to dark text for contrast */
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.chart-box h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+
+/* income css */
+/* ====== Container ====== */
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+/* ====== Chart Section ====== */
+.income-chart-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.income-chart-section h2 {
+    color: #27ae60;
+    margin-bottom: 1rem;
+}
+
+/* ====== Table Section ====== */
+.income-sources-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.section-header h2 {
+    color: #2c3e50;
+}
+
+.export-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    background-color: #27ae60;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #219150;
+}
+
+/* ====== Income Table ====== */
+#incomeSourcesTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+#incomeSourcesTable th,
+#incomeSourcesTable td {
+    border: 1px solid #dfe6e9;
+    padding: 12px;
+    text-align: left;
+}
+
+#incomeSourcesTable th {
+    background-color: #2ecc71; /* Green shade */
+    color: white;
+}
+
+#incomeSourcesTable tr:nth-child(even) {
+    background-color: #e8f5e9; /* Light green tint */
+}
+
+/* ==== Green Buttons for Income Page ==== */
+.income-page .export-buttons a {
+    background-color: #2ecc71; /* Green */
+}
+
+.income-page .export-buttons a:hover {
+    background-color: #27ae60; /* Darker Green */
+}
+
+
+
+/* expense css */
+.expense-chart-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.expense-details-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#expenseSourcesTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+#expenseSourcesTable th,
+#expenseSourcesTable td {
+    border: 1px solid #dfe6e9;
+    padding: 12px;
+    text-align: left;
+}
+
+
+#expenseSourcesTable th {
+    background-color: #e74c3c; /* Red tone for expenses */
+    color: white;
+}
+
+#expenseSourcesTable tr:nth-child(even) {
+    background-color: #fdf2f2; /* Light red tint for alternating rows */
+}
+
+/* ==== Red Buttons for Expense Page ==== */
+.expense-page .export-buttons a {
+    background-color: #e74c3c; /* Red */
+}
+
+.expense-page .export-buttons a:hover {
+    background-color: #c0392b; /* Darker Red */
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 15px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .export-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .export-buttons a {
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    }
+}
+
+
+
+
+
+
+

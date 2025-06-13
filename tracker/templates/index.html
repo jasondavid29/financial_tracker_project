@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Financial Tracker</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-container">
+      <a href="{% url 'index' %}" class="logo-link">
+        <h1 class="logo">💼 Financial Tracker</h1>
+      </a>
+      <nav class="nav-links">
+        <a href="#contact" class="nav-btn">Contact Us</a>
+        <a href="{% url 'login' %}" class="nav-btn">Login</a>
+        <a href="{% url 'register' %}" class="nav-btn">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section class="container">
+      <div class="hero-content">
+        <h2>Welcome to <span class="highlight">Financial Tracker</span></h2>
+        <p class="tagline">
+          Gain full control of your income and expenses with a smart budgeting system designed for everyday use.
+        </p>
+        <p class="features-paragraph">
+          Track your daily transactions easily, view detailed insights with interactive charts, set goals and manage your monthly budget effectively, and enjoy a safe and secure financial planning tool — all in one place.
+        </p>
+        <form action="{% url 'login' %}" method="get">
+          <button class="checkin-btn" type="submit">Get Started</button>
+        </form>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- About Section -->
+    <section id="about" class="info-section about-section">
+      <div class="about-container">
+        <div class="about-text">
+          <h2>About Financial Tracker</h2>
+          <p>
+            Financial Tracker is a powerful, user-friendly web app that helps you monitor your income, track expenses, and plan your monthly budget. Designed for individuals, freelancers, and small businesses, our tool provides a centralized platform for effective money management. With data visualizations and smart insights, you’ll make more informed decisions about your finances.
+          </p>
+        </div>
+        <div class="about-image">
+          <img src="{% static 'images/financial_tracker.png' %}" alt="Financial Planning Illustration">
+        </div>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- How It Works Section with Cards -->
+    <section id="how-it-works" class="info-section">
+      <h2 class="section-title">How It Works</h2>
+      <div class="how-it-works-cards">
+        <div class="card">
+          <h3 class="card-title">Register & Login</h3>
+          Start by creating an account and logging in securely.
+        </div>
+        <div class="card">
+          <h3 class="card-title">Add Your Transactions</h3>
+          Enter your daily income and expenses into the system.
+        </div>
+        <div class="card">
+          <h3 class="card-title">Set Your Budget</h3>
+          Define monthly goals for different spending categories.
+        </div>
+        <div class="card">
+          <h3 class="card-title">Analyze Your Finances</h3>
+          View dynamic charts and summary reports to understand your habits.
+        </div>
+        <div class="card">
+          <h3 class="card-title">Adjust and Save</h3>
+          Make informed decisions and watch your savings grow!
+        </div>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact-section">
+      <h2>Contact Us</h2>
+      <p class="subtext">Have questions or need help? Reach out to our support team!</p>
+
+      {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          {% if not 'success' in message.tags and not 'info' in message.tags %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+      <form class="contact-form" method="POST">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+
+        <div class="form-group">
+          {{ form.name.label_tag }}
+          {{ form.name }}
+          {{ form.name.errors }}
+        </div>
+
+        <div class="form-group">
+          {{ form.email.label_tag }}
+          {{ form.email }}
+          {{ form.email.errors }}
+        </div>
+
+        <div class="form-group">
+          {{ form.message.label_tag }}
+          {{ form.message }}
+          {{ form.message.errors }}
+        </div>
+
+        <button class="submit-btn" type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Financial Tracker. All rights reserved.</p>
+  </footer>
+
+  <script src="{% static 'main.js' %}" defer></script>
+</body>
+</html>

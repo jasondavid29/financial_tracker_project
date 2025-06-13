@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daily Expense</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="expense-page">
+<header class="navbar">
+    <div class="navbar-container">
+        <a href="{% url 'index' %}" class="logo-link">
+            <h1 class="logo">💼 Financial Tracker</h1>
+        </a>
+        <nav class="nav-links">
+            <div class="dropdown">
+                <button class="dropbtn">Account</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'income' %}">Your Income</a>
+                    <a href="{% url 'expense' %}">Your Expense</a>
+                    <a href="{% url 'logout' %}">Logout</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+
+    <!-- Expense Line Chart Section -->
+    <section class="expense-chart-section">
+        <h2>Daily Expense Overview</h2>
+        <canvas id="expenseLineChart" width="400" height="200"></canvas>
+    </section>
+
+    <!-- Expense Details Section -->
+    <section class="expense-details-section">
+        <div class="section-header">
+            <h2>Expense Details</h2>
+            <div class="export-buttons">
+                <a href="{% url 'export_expense_csv' %}" class="btn btn-primary">Export CSV</a>
+                <a href="{% url 'export_expense_pdf' %}" class="btn btn-primary">Export PDF</a>
+            </div>
+        </div>
+
+        <table id="expenseSourcesTable">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Category</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody id="expenseSourcesBody">
+                <!-- JS will populate this -->
+            </tbody>
+        </table>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <p>&copy; 2025 Financial Tracker. All rights reserved.</p>
+</footer>
+
+<!-- JSON Data -->
+<script id="chart-data" type="application/json">{{ chart_data|safe }}</script>
+<script id="expense-sources" type="application/json">{{ sources|safe }}</script>
+<script src="{% static 'expense.js' %}"></script>
+</body>
+</html>
