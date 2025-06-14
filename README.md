@@ -26,7 +26,7 @@
 ⚙️ **How to Run the Project**
 
 **1. Clone the repository:**
-git clone https://github.com/yourusername/financial-tracker.git
+git clone (https://github.com/jasondavid29/financial_tracker_project)
 cd financial-tracker
 
 **2. Create and activate a virtual environment:**
