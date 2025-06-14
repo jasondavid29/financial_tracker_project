@@ -67,6 +67,8 @@ http://127.0.0.1:8000
 
 4. Download your data using the Export CSV/PDF buttons.
 
+5. Use can also access separate income and expense pages to know your daily overview.
+
 ---
 
 🌐 **LIVE DEMO**
