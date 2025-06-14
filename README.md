@@ -50,6 +50,7 @@ python manage.py runserver
 Open a web browser and go to:
 http://127.0.0.1:8000
 
+---
 
 📌 **Usage**
 **Registration and Login**
@@ -66,6 +67,7 @@ http://127.0.0.1:8000
 
 4. Download your data using the Export CSV/PDF buttons.
 
+---
 
 🌐 **LIVE DEMO**
 
